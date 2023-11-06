@@ -1,0 +1,152 @@
+Gabriela Roznawska
+CSC-161-02
+February 17, 2023
+
+Test Plan and Transcript for "Assigning Grades" Homework:
+
+The program "Assigning grades": grade.c translates numerical values in the range
+0-100 and outputs a letter grade corresponding to it.
+
+********************************************************************************
+The Test Plan aims to validate accuracy of the project and therefore is going to
+test a variety of possible user inputs.
+
+The testing cases are divided into groups:
+1. VALID USER INPUT
+   Valid user input is considered: A number between 0 and 100 including floats.
+
+2. VALID EDGE CASES
+   Valid edge case input is considered an input that is especially prone to
+   result in incorrect output. In this case it is: 0 and 100.
+
+3. INVALID INPUT
+   Invalid input is considered an input that does not allow the program to
+   provide correct output. In this case it is: a negative number and number
+   over 100. Furthermore, there are some invalid inputs that the program is
+   not able to deal with as the extent of material covered in the class did
+   not include such cases.
+
+Disclaimer: As at the time of completing this homework the topic of handling
+cases of invalid input such as input of wrong type, this scenario is not covered
+in this Test Plan.
+
+********************************************************************************
+Test Plan:
+********************************************************************************
+Disclaimer: In order to ensure clarity every "expected output" does not include
+the answering statement: "Resulting letter grade based on your input:".
+It can be assumed that it in fact is a prelude to the letter grade
+expected result.
+
+1. Valid user input:
+  This part of testing is going to test expected input and provide both
+  appropriate letter grades and the modifiers.
+
+  a. Passing grade (A-D) with no modifiers
+     input: 73
+     expected output: C
+
+  b. Passing grade (A-D) with a negative (-) modifier
+     input: 91
+     expected output: A-
+
+  c. Passing grade (A-D) with a positive (+) modifier
+     input: 88
+     expected output: B+
+
+  d. Failing grade (F) within the scope of modifiers but (if correctly assessed
+     by program) with no modifier.
+     input: 32
+     expected output: F
+
+
+2. Valid edge cases
+  This part tests valid inputs that are more prone to cause invalid output
+
+  e. The highest numerical grade: 100.
+     input: 100
+     expected output: A+
+
+  f. The lowest numerical grade: 0.
+     input: 0
+     expected output: F
+
+
+3. Invalid input
+  This part ensures that the number is within range.
+
+  a. INPUT ABOVE 100
+     input: 101
+     expected output: Invalid input. Provide valid number between 0 and 100
+
+  b. INPUT BELOW 0
+     input: -1
+     expected output: Invalid input. Provide valid number between 0 and 100
+
+
+********************************************************************************
+Test transcript:
+********************************************************************************
+
+Script started on 2023-02-17 20:47:31-06:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="80" LINES="24"]
+bash: /home/roznawsk/.bashrc: line 99: syntax error near unexpected token `;'
+bash: /home/roznawsk/.bashrc: line 99: `; Set keyboard command shortcut for compiling'
+[?2004hroznawsk@fraenkel:Labs$ ./grade
+[?2004l
+Input a numeric grade (0-100) to translate into a letter grade
+73
+Resulting letter grade based on your input: C
+[?2004hroznawsk@fraenkel:Labs$ 91[K[K./grade
+[?2004l
+Input a numeric grade (0-100) to translate into a letter grade
+91
+Resulting letter grade based on your input: A-
+[?2004hroznawsk@fraenkel:Labs$ ./grade
+[?2004l
+Input a numeric grade (0-100) to translate into a letter grade
+88
+Resulting letter grade based on your input: B+
+[?2004hroznawsk@fraenkel:Labs$ ./grade
+[?2004l
+Input a numeric grade (0-100) to translate into a letter grade
+32
+Resulting letter grade based on your input: F
+[?2004hroznawsk@fraenkel:Labs$ ./grade
+[?2004l
+Input a numeric grade (0-100) to translate into a letter grade
+100
+Resulting letter grade based on your input: A+
+[?2004hroznawsk@fraenkel:Labs$ ./grade
+[?2004l
+Input a numeric grade (0-100) to translate into a letter grade
+0
+Resulting letter grade based on your input: F
+[?2004hroznawsk@fraenkel:Labs$ ./grade
+[?2004l
+Input a numeric grade (0-100) to translate into a letter grade
+101
+Invalid input. Provide valid number between 0 and 100
+[?2004hroznawsk@fraenkel:Labs$ ./grade
+[?2004l
+Input a numeric grade (0-100) to translate into a letter grade
+-1
+Invalid input. Provide valid number between 0 and 100
+[?2004hroznawsk@fraenkel:Labs$ exir[Kt
+[?2004l
+exit
+
+Script done on 2023-02-17 20:48:10-06:00 [COMMAND_EXIT_CODE="0"]
+
+
+
+
+
+
+
+*******************************************************************************
+CONCLUSION:
+
+The program successfully completes the test. The outcomes were just as expected
+and it is correct to state that the program "Assigning Grades" correctly
+performs the task of translating numeric grades to their letter equivalents.
+*******************************************************************************
